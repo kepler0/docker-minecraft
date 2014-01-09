@@ -14,7 +14,7 @@ then
     cp /usr/local/etc/minecraft/ops.txt .
     cp /usr/local/etc/minecraft/white-list.txt .
     cp /usr/local/etc/minecraft/server.properties .
-    curl http://dl.bukkit.org/downloads/craftbukkit/get/02389_1.6.4-R2.0/craftbukkit.jar -o minecraft_server.jar
+    curl http://dl.bukkit.org/downloads/craftbukkit/get/02457_1.7.2-R0.2/craftbukkit-beta.jar -o minecraft_server.jar
 fi
 
 
