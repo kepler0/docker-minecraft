@@ -1,11 +1,10 @@
 # -----------------------------------------------------------------------------
 # docker-minecraft
 #
-# Builds a basic docker image that can run a Minecraft server
-# (http://minecraft.net/).
+# Builds a basic docker image that can run a Minecraft server.
 #
-# Authors: Isaac Bythewood
-# Updated: Oct 21st, 2014
+# Authors: Isaac Bythewood, Kepler Sticka-Jones
+# Created: Oct 21st, 2013
 # Require: Docker (http://www.docker.io/)
 # -----------------------------------------------------------------------------
 
