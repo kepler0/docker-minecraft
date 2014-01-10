@@ -25,10 +25,6 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 RUN apt-get --yes update; apt-get --yes upgrade
 RUN apt-get --yes install curl openjdk-7-jre-headless supervisor pwgen
 
-# Load in all of our config files.
-ADD ./supervisor/supervisord.conf /etc/supervisor/supervisord.conf
-ADD ./supervisor/conf.d/minecraft.conf /etc/supervisor/conf.d/minecraft.conf
-
 # Download Minecraft Server
 RUN curl https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar -o /data/minecraft_server.jar
 
