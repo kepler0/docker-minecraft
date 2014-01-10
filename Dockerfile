@@ -9,7 +9,7 @@
 # -----------------------------------------------------------------------------
 
 # Base system is the LTS version of Ubuntu.
-FROM ubuntu
+FROM stackbrew/ubuntu:13.04
 
 # Make sure we don't get notifications we can't answer during building.
 ENV DEBIAN_FRONTEND noninteractive
