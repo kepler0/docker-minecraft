@@ -37,5 +37,5 @@ RUN chmod +x minecraft_server.jar
 
 # 25565 is for Minecraft server, /data contains static files and database /start runs it.
 EXPOSE 25565
-ENTRYPOINT ["java", "-jar", "minecraft.jar", "nogui"]
+ENTRYPOINT ["java", "-jar", "minecraft_server.jar", "nogui"]
 CMD ["-Xmx1G", "-Xms1G"]
