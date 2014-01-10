@@ -30,7 +30,7 @@ RUN mkdir /data
 VOLUME ["/data"]
 
 # Download Minecraft Server
-ADD https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar /minecraft/minecraft_server.jar
+ADD https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar minecraft_server.jar
 
 # Fix all permissions
 RUN chmod +x minecraft_server.jar
