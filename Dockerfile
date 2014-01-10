@@ -32,7 +32,7 @@ ADD ./supervisor/conf.d/minecraft.conf /etc/supervisor/conf.d/minecraft.conf
 # Fix all permissions
 RUN chmod +x /start
 
-# 80 is for nginx web, /data contains static files and database /start runs it.
+# 25565 is for Minecraft server, /data contains static files and database /start runs it.
 EXPOSE 25565
 VOLUME ["/data"]
 CMD ["/start"]
