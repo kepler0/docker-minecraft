@@ -16,7 +16,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # An annoying error message keeps appearing unless you do this.
 RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -s /bin/true /sbin/initctl
 
 # Set up required repositories.
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
