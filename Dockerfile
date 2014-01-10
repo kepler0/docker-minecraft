@@ -23,14 +23,14 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 
 # Download and install everything from the repos.
 RUN apt-get --yes update; apt-get --yes upgrade
-RUN apt-get --yes install curl openjdk-7-jre-headless supervisor pwgen
+RUN apt-get --yes install openjdk-7-jre-headless
 
 # Create folder that we will be running the Minecraft Server instance in.
 RUN mkdir /data
 VOLUME ["/data"]
 
 # Download Minecraft Server
-RUN curl https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar -o minecraft_server.jar
+ADD https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar /minecraft/minecraft_server.jar
 
 # Fix all permissions
 RUN chmod +x minecraft_server.jar
