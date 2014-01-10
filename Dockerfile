@@ -33,7 +33,7 @@ ADD ./supervisor/conf.d/minecraft.conf /etc/supervisor/conf.d/minecraft.conf
 RUN curl https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar -o /data/minecraft_server.jar
 
 # Fix all permissions
-RUN chmod +x /start
+RUN chmod +x /data/minecraft_server.jar
 
 # 25565 is for Minecraft server, /data contains static files and database /start runs it.
 EXPOSE 25565
