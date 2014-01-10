@@ -25,14 +25,17 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
 RUN apt-get --yes update; apt-get --yes upgrade
 RUN apt-get --yes install curl openjdk-7-jre-headless supervisor pwgen
 
+# Create folder that we will be running the Minecraft Server instance in.
+RUN mkdir /data
+VOLUME ["/data"]
+
 # Download Minecraft Server
-RUN curl https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar -o /data/minecraft_server.jar
+RUN curl https://s3.amazonaws.com/Minecraft.Download/versions/1.7.4/minecraft_server.1.7.4.jar -o minecraft_server.jar
 
 # Fix all permissions
-RUN chmod +x /data/minecraft_server.jar
+RUN chmod +x minecraft_server.jar
 
 # 25565 is for Minecraft server, /data contains static files and database /start runs it.
 EXPOSE 25565
-VOLUME ["/data"]
 ENTRYPOINT ["java", "-jar", "minecraft.jar", "nogui"]
 CMD ["-Xmx1G", "-Xms1G"]
