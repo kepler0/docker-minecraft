@@ -21,9 +21,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initctl
 
+# Set up required repositories.
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 
 # Download and install everything from the repos.
-ADD ./apt/sources.list /etc/apt/sources.list
 RUN apt-get --yes update; apt-get --yes upgrade
 RUN apt-get --yes install curl openjdk-7-jre-headless supervisor pwgen
 
